@@ -5,7 +5,7 @@ version: '3.5'
 
 services:
   geth:
-    build: eth-node
+    build: docker/geth-node
     container_name: eth-node
     ports:
       - "30303:30303"

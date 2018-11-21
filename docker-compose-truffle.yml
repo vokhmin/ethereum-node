@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  truffle3:
+    build: ./docker/truffle
+    command: /root/build.sh
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./project:/project
+#      - ./../../target/contracts/multi-transaction:/project/output
+
+networks:
+  default:
+    external:
+      name: eth-node-net
