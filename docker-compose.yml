@@ -1,0 +1,19 @@
+version: '3.5'
+
+# Ethereum development and test single node using Docker
+# Inspired by https://github.com/Capgemini-AIE/ethereum-docker
+
+services:
+  geth:
+    build: eth-node
+    container_name: eth-node
+    ports:
+      - "30303:30303"
+      - "30303:30303/udp"
+      - "8545:8545"
+    networks:
+      - eth-node-net
+
+networks:
+  eth-node-net:
+    name: eth-node-net
